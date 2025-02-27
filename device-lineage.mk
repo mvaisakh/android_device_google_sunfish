@@ -90,6 +90,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.identity_credential.xml
 
+# Userfaultfd
+PRODUCT_ENABLE_UFFD_GC := true
+
 # VNDK FWK detect
 PRODUCT_PACKAGES += \
     libvndfwk_detect_jni.qti.vendor
