@@ -50,6 +50,10 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_VENDOR_KERNEL_HEADERS += $(TARGET_KERNEL_DIR)/kernel-headers
 
+$(call soong_config_set,lineage_health,charging_control_charging_path,/sys/class/power_supply/sm7150_bms/charge_disable)
+$(call soong_config_set,lineage_health,charging_control_charging_enabled,0)
+$(call soong_config_set,lineage_health,charging_control_charging_disabled,1)
+
 # LiveDisplay
 PRODUCT_PACKAGES += \
     vendor.lineage.livedisplay@2.0-service-sdm
