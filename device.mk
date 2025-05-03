@@ -431,6 +431,7 @@ $(call soong_config_set,QTI_GPT_UTILS,USE_BSG_FRAMEWORK,false)
 # Vibrator HAL
 PRODUCT_PACKAGES += \
     com.android.vibrator.sunfish \
+    android.hardware.vibrator-V2-ndk.vendor
 
 # Vibrator HAL
 PRODUCT_PRODUCT_PROPERTIES +=\

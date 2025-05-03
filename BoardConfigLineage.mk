@@ -4,21 +4,18 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# DTB
+BOARD_PREBUILT_DTBIMAGE_DIR := $(TARGET_KERNEL_DIR)
+BOARD_PREBUILT_DTBOIMAGE := $(BOARD_PREBUILT_DTBIMAGE_DIR)/dtbo.img
+
 # Kernel
-BOARD_KERNEL_IMAGE_NAME := Image.lz4
 TARGET_COMPILE_WITH_MSM_KERNEL := true
-TARGET_KERNEL_CONFIG := sunfish_defconfig
-TARGET_KERNEL_SOURCE := kernel/google/msm-4.14
 TARGET_NEEDS_DTBOIMAGE := true
 
 # Lineage Health
 TARGET_HEALTH_CHARGING_CONTROL_CHARGING_PATH := /sys/class/power_supply/sm7150_bms/charge_disable
 TARGET_HEALTH_CHARGING_CONTROL_CHARGING_ENABLED := 0
 TARGET_HEALTH_CHARGING_CONTROL_CHARGING_DISABLED := 1
-
-# Manifests
-DEVICE_MANIFEST_FILE += device/google/sunfish/lineage_manifest.xml
-DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += vendor/lineage/config/device_framework_matrix.xml
 
 # Needed for camera
 TARGET_GRALLOC_HANDLE_HAS_RESERVED_SIZE := true
@@ -30,10 +27,6 @@ BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 
 # Reserve space for gapps install
 -include vendor/lineage/config/BoardConfigReservedSize.mk
-
-# SELinux
-BOARD_SEPOLICY_DIRS += device/google/sunfish/sepolicy-lineage/dynamic
-BOARD_SEPOLICY_DIRS += device/google/sunfish/sepolicy-lineage/vendor
 
 # Verified Boot
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3

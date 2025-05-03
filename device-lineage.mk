@@ -41,8 +41,14 @@ PRODUCT_PRODUCT_PROPERTIES += ro.opa.eligible_device=true
 PRODUCT_PACKAGES += \
     HbmSVManagerOverlay
 
-# Lineage Health
-include hardware/google/pixel/lineage_health/device.mk
+# Kernel
+TARGET_KERNEL_VERSION ?= 4.14
+TARGET_KERNEL_DIR ?= device/google/sunfish-kernel
+
+PRODUCT_COPY_FILES += \
+    $(TARGET_KERNEL_DIR)/Image:kernel
+
+PRODUCT_VENDOR_KERNEL_HEADERS += $(TARGET_KERNEL_DIR)/kernel-headers
 
 # LiveDisplay
 PRODUCT_PACKAGES += \
@@ -56,9 +62,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     PresencePolling \
     RcsService
-
-# Touch
-include hardware/google/pixel/touch/device.mk
 
 # Build necessary packages for vendor
 

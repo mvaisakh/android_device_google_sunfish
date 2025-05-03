@@ -49,6 +49,7 @@ BOARD_KERNEL_CMDLINE += loop.hw_queue_depth=31
 BOARD_KERNEL_CMDLINE += androidboot.usbcontroller=a600000.dwc3 swiotlb=1
 BOARD_KERNEL_CMDLINE += androidboot.boot_devices=soc/1d84000.ufshc
 BOARD_KERNEL_CMDLINE += cgroup_disable=pressure
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
 #BOARD_KERNEL_CMDLINE += video=vfb:640x400,bpp=32,memsize=3072000 service_locator.enable=1 earlycon=msm_geni_serial,0x880000
 
@@ -212,7 +213,7 @@ BOARD_GOOGLE_DYNAMIC_PARTITIONS_PARTITION_LIST := \
     system_ext
 
 #BOARD_GOOGLE_DYNAMIC_PARTITIONS_SIZE is set to BOARD_SUPER_PARTITION_SIZE / 2 - 4MB
-BOARD_GOOGLE_DYNAMIC_PARTITIONS_SIZE := 4873781248
+BOARD_GOOGLE_DYNAMIC_PARTITIONS_SIZE := 6023255236
 
 # Set error limit to BOARD_SUPER_PARTITON_SIZE - 500MB
 BOARD_SUPER_PARTITION_ERROR_LIMIT := 9231663104
