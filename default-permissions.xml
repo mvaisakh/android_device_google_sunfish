@@ -151,4 +151,9 @@
         <!-- Notifications -->
         <permission name="android.permission.POST_NOTIFICATIONS" fixed="false"/>
     </exception>
+    <exception  
+        package="com.google.android.pixelsystemservice">
+        <!-- ContextHub -->
+        <permission name="android.permission.ACCESS_CONTEXT_HUB" fixed="false"/>
+    </exception>
 </exceptions>
