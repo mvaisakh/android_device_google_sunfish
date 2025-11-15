@@ -17,7 +17,6 @@
 include build/make/target/board/BoardConfigMainlineCommon.mk
 include build/make/target/board/BoardConfigPixelCommon.mk
 
-TARGET_BOARD_PLATFORM := sm6150
 TARGET_BOARD_INFO_FILE := device/google/sunfish/board-info.txt
 USES_DEVICE_GOOGLE_SUNFISH := true
 
@@ -120,8 +119,6 @@ include device/google/sunfish/sepolicy/sunfish-sepolicy.mk
 
 TARGET_FS_CONFIG_GEN := device/google/sunfish/config.fs
 
-QCOM_BOARD_PLATFORMS += sm6150
-MSMSTEPPE = sm6150
 QC_PROP_ROOT := vendor/qcom/sm8150/proprietary
 QC_PROP_PATH := $(QC_PROP_ROOT)
 BOARD_HAVE_BLUETOOTH_QCOM := true

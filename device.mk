@@ -18,15 +18,14 @@ LOCAL_PATH := device/google/sunfish
 
 PRODUCT_VENDOR_MOVE_ENABLED := true
 TARGET_BOARD_PLATFORM := sm6150
-MSMSTEPPE := sm6150
+PRODUCT_USES_QCOM_HARDWARE := true
+PRODUCT_BOARD_PLATFORM := sm6150
 
 PRODUCT_SOONG_NAMESPACES += \
     device/google/sunfish \
     hardware/google/interfaces \
     hardware/google/pixel \
-    hardware/qcom/sm8150/display \
     hardware/qcom/sm8150/gps \
-    hardware/qcom/wlan/legacy \
     hardware/qcom-caf/bootctrl \
     system/chre/host/hal_generic \
     vendor/qcom/opensource/data-ipa-cfg-mgr-legacy-um

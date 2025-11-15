@@ -9,8 +9,7 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    vendor/qcom/opensource/commonsys-intf/display \
-    vendor/qcom/opensource/display
+    vendor/qcom/opensource/commonsys-intf/display
 
 # Add common definitions for Qualcomm
 $(call inherit-product, hardware/qcom-caf/common/common.mk)
@@ -19,6 +18,9 @@ $(call inherit-product, hardware/qcom-caf/common/common.mk)
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/allowlist_com.google.android.as.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/allowlist_com.google.android.as.xml
 
+# Audio
+AUDIO_USE_STUB_HAL := true
+
 # Camera
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.vendor.camera.extensions.package=com.google.android.apps.camera.services \
@@ -26,6 +28,9 @@ PRODUCT_PRODUCT_PROPERTIES += \
 
 # CHRE
 $(call soong_config_set,chre,chre_daemon_dsp_library,//vendor/google/sunfish:libadsprpc)
+
+# Dataservices
+USE_DEVICE_SPECIFIC_DATASERVICES := true
 
 # DebugFS
 PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
